@@ -1,24 +1,19 @@
 #include<iostream>
-#include<cstdlib>
- 
+#include<string.h>
+
 using namespace std;
  
-main()
+int main()
 {
-   int n, max, num, c;
- 
-   cout << "Enter the number of random numbers you want ";
+   int n, c;
+   string input_msg = "Enter the number whose table you want: ";
+   cout << input_msg;
    cin >> n;
-   cout << "Enter the maximum value of random number ";
-   cin >> max;   
+   cout << "Table of " << n << " is:" << endl;
  
-   cout << "random numbers from 0 to " << max << " are :-" << endl;
- 
-   for ( c = 1 ; c <= n ; c++ )
+   for (c=1;c<=10;c++)
    {
-      num = random(max);
-      cout << num << endl;
-   }         
- 
+      cout<<c*n<<endl;
+   }
    return 0;
 }
