@@ -17,6 +17,13 @@ newNode->next = *headAddress;
 
 }
 
+void addNodeAfter(int data, struct node *prevNode)
+{
+struct node *newNode = (struct node*)malloc(sizeof(struct node));
+newNode->data=data;
+newNode->next=prevNode->next;
+prevNode->next=newNode;
+}
 
 void printList(struct node *head)
 {
@@ -45,6 +52,7 @@ addNodeAtStart(4,&head);
 addNodeAtStart(3,&head);
 addNodeAtStart(2,&head);
 addNodeAtStart(1,&head);
+addNodeAfter(11,second);
 printList(head);
 
 return 0;
