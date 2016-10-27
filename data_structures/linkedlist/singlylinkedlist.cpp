@@ -8,13 +8,22 @@ int data;
 struct node *next;
 };
 
+void addNodeAtStart(int data, struct node **headAddress)
+{
+struct node *newNode = (struct node*)malloc(sizeof(struct node));
+newNode->data = data;
+newNode->next = *headAddress;
+*headAddress = newNode;
+
+}
+
 
 void printList(struct node *head)
 {
 struct node *current_node = head;
 while(current_node != NULL)
 {
-cout<<current_node->data;
+cout<<current_node->data<<" ";
 current_node = current_node->next;
 }
 }
@@ -32,6 +41,12 @@ second->data=10;
 second->next=third;
 third->data=15;
 third->next=NULL;
+addNodeAtStart(4,&head);
+addNodeAtStart(3,&head);
+addNodeAtStart(2,&head);
+addNodeAtStart(1,&head);
 printList(head);
+
 return 0;
 }
+
