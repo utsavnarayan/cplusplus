@@ -5,8 +5,12 @@ using namespace std;
 int main()
 {
 int a = 5;
-cout<<&a;
-int *b=10;
+int* b = NULL;
+b=&a;
+cout<<"a is stored at: "<<&a<<"\n";
+cout<<"Address pointed by pointer b is: "<<b<<"\n";
+cout<<"Value stored where the pointer b points to is: "<<*b<<"\n";
+
 
 return 0;
 }
